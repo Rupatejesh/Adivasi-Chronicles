@@ -1,0 +1,182 @@
+.rights-page {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: #edf1e9;
+}
+
+.rights-page .inner-page-hero {
+  min-height: clamp(29rem, 50vw, 40rem);
+  color: #fffdf6;
+  background-color: #24483b;
+  background-image:
+    linear-gradient(90deg, rgb(17 43 35 / 0.96) 0%, rgb(23 53 45 / 0.9) 54%, rgb(36 72 57 / 0.57) 100%),
+    radial-gradient(ellipse at 83% 20%, rgb(200 178 126 / 0.35), transparent 38%),
+    linear-gradient(136deg, #315945 0%, #24483b 55%, #17352d 100%);
+}
+
+.rights-page .inner-page-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max-width);
+}
+
+.rights-page .inner-page-hero__eyebrow,
+.rights-page .inner-page-hero__metadata {
+  color: #e8c981;
+}
+
+.rights-page .inner-page-hero h1 {
+  max-width: 20ch;
+  color: #fffdf6;
+  font-size: clamp(2.8rem, 5.7vw, 5rem);
+}
+
+.rights-page .inner-page-hero__description {
+  max-width: 43rem;
+  color: rgb(255 253 246 / 0.9);
+}
+
+.rights-page .inner-page-hero__signature {
+  border-color: #e8c981;
+}
+
+.rights-page .inner-page-hero::before {
+  right: 11%;
+  bottom: 9%;
+  left: auto;
+  width: clamp(12rem, 27vw, 22rem);
+  height: 77%;
+  border: 1px solid rgb(239 225 189 / 0.25);
+  border-bottom: 0;
+  border-radius: 0;
+  transform: skewY(-8deg);
+}
+
+.rights-page .inner-page-hero::after {
+  right: 16%;
+  bottom: 9%;
+  left: auto;
+  width: clamp(8rem, 18vw, 15rem);
+  height: 66%;
+  border: 1px solid rgb(239 225 189 / 0.15);
+  border-bottom: 0;
+  border-radius: 0;
+  transform: skewY(-8deg);
+}
+
+.rights-page .editorial-section--paper {
+  background:
+    radial-gradient(ellipse at 2% 0, rgb(79 125 72 / 0.09), transparent 28rem),
+    #edf1e9;
+}
+
+.rights-page .section-intro__eyebrow {
+  color: var(--earth);
+}
+
+.rights-page .section-intro h2,
+.rights-page .reference-block__heading h2 {
+  color: var(--forest-deep);
+}
+
+.rights-page .section-intro__description {
+  color: #4d574e;
+}
+
+.rights-page .civic-explorer__index-link {
+  background: #f9faf5;
+}
+
+.rights-page .civic-explorer__entry-label {
+  color: #765039;
+}
+
+.rights-page .civic-explorer__entry-number {
+  border-color: rgb(122 80 54 / 0.47);
+  background: #f8f3e8;
+}
+
+.rights-page .reference-block {
+  border-color: rgb(36 81 67 / 0.25);
+  background: rgb(255 253 248 / 0.45);
+}
+
+.rights-page .reference-block__eyebrow {
+  color: var(--earth);
+}
+
+.rights-page .reference-block__body > p {
+  color: #4d574e;
+}
+
+.rights-page__cross-navigation {
+  display: flex;
+  width: min(var(--content-width), var(--content-max-width));
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.rights-page__cross-navigation .editorial-cta {
+  margin-top: 0;
+}
+
+.rights-page__cross-navigation .editorial-cta--earth {
+  color: var(--forest-deep);
+  border-color: #8a6844;
+}
+
+.rights-page__cross-navigation .editorial-cta--earth > span {
+  color: #8a6844;
+}
+
+@media (max-width: 48rem) {
+  .rights-page .inner-page-hero {
+    min-height: 34rem;
+    background-image:
+      linear-gradient(90deg, rgb(17 43 35 / 0.96) 0%, rgb(23 53 45 / 0.89) 72%, rgb(36 72 57 / 0.67) 100%),
+      radial-gradient(ellipse at 83% 20%, rgb(200 178 126 / 0.35), transparent 38%),
+      linear-gradient(136deg, #315945 0%, #24483b 55%, #17352d 100%);
+  }
+
+  .rights-page .inner-page-hero::before {
+    right: 5%;
+    width: 11rem;
+    opacity: 0.75;
+  }
+
+  .rights-page .inner-page-hero::after {
+    right: 10%;
+    width: 8rem;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 30rem) {
+  .rights-page .inner-page-hero {
+    min-height: 34rem;
+    background-image:
+      linear-gradient(180deg, rgb(17 43 35 / 0.3), rgb(17 43 35 / 0.78) 36%, #17352d 100%),
+      radial-gradient(ellipse at 83% 20%, rgb(200 178 126 / 0.35), transparent 38%),
+      linear-gradient(136deg, #315945 0%, #24483b 55%, #17352d 100%);
+  }
+
+  .rights-page .inner-page-hero h1 {
+    font-size: clamp(2.55rem, 11vw, 3.5rem);
+  }
+
+  .rights-page .editorial-section--paper {
+    background:
+      radial-gradient(ellipse at 2% 0, rgb(79 125 72 / 0.09), transparent 28rem),
+      #edf1e9;
+  }
+
+  .rights-page__cross-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

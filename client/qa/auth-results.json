@@ -1,0 +1,6 @@
+[
+  "1440px: routes, Back, fields, password visibility/match, terms, preview submit, keyboard focus, image and overflow passed",
+  "768px: routes, Back, fields, password visibility/match, terms, preview submit, keyboard focus, image and overflow passed",
+  "390px: routes, Back, fields, password visibility/match, terms, preview submit, keyboard focus, image and overflow passed",
+  "Image failure fallback, reduced motion, no uncaught JavaScript exceptions passed. Screen-reader and other-browser QA remain manual."
+]

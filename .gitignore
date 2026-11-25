@@ -1,0 +1,15 @@
+node_modules/
+*/node_modules/
+client/dist/
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+.npm-cache/
+*/.npm-cache/
+*.log
+*.zip
+.DS_Store
+Thumbs.db

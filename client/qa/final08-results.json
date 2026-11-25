@@ -1,0 +1,6 @@
+[
+  "Full sequence, routes, page layouts, image loading, contact preview and overflow passed at 1440px",
+  "Full sequence, routes, page layouts, image loading, contact preview and overflow passed at 768px",
+  "Full sequence, routes, page layouts, image loading, contact preview and overflow passed at 390px",
+  "Keyboard Skip at every stage, Back, reduced motion and blocked-image fallbacks passed. Speech mocked; audible quality remains manual QA."
+]

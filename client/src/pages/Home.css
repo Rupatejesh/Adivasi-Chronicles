@@ -1,0 +1,560 @@
+.home-page {
+  width: 100%;
+  max-width: none;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  background: var(--forest-deep);
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(38rem, calc(100svh - 5.25rem));
+  overflow: hidden;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.home-hero__visual,
+.home-hero__wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-hero__visual {
+  z-index: -2;
+  background-image:
+    url('/images/home/asr-eastern-ghats-hero.jpg'),
+    linear-gradient(164deg, #1a3d39 0%, #315f50 32%, #708b74 60%, #c6b995 100%);
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+}
+
+.home-hero__visual::before,
+.home-hero__visual::after {
+  position: absolute;
+  content: '';
+}
+
+.home-hero__visual::before {
+  inset: 34% 0 0;
+  background:
+    linear-gradient(152deg, transparent 0 21%, rgb(24 63 56 / 0.55) 21.5% 39%, transparent 39.5%),
+    linear-gradient(28deg, rgb(20 54 47 / 0.75) 0 24%, transparent 24.5% 100%),
+    linear-gradient(180deg, transparent, rgb(19 44 38 / 0.4));
+  mix-blend-mode: multiply;
+}
+
+.home-hero__visual::after {
+  right: -8%;
+  bottom: -18%;
+  left: 38%;
+  height: 48%;
+  border-radius: 50% 50% 0 0;
+  background: rgb(211 211 180 / 0.22);
+  filter: blur(2.5rem);
+}
+
+.home-hero__wash {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgb(13 39 34 / 0.78) 0%, rgb(18 49 42 / 0.45) 40%, transparent 78%),
+    linear-gradient(180deg, rgb(14 44 39 / 0.2), transparent 32%, rgb(13 40 34 / 0.32));
+}
+
+.home-hero__content {
+  width: min(var(--content-width), var(--content-max-width));
+  margin-inline: auto;
+  padding-block: clamp(5rem, 12vw, 9rem);
+}
+
+.home-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  color: #f0d58e;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.home-hero__eyebrow-rule {
+  width: 2.6rem;
+  height: 1px;
+  background: #f0d58e;
+}
+
+.home-hero h1 {
+  max-width: 12ch;
+  color: #fffdf6;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.1rem, 7vw, 6.65rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: pretty;
+}
+
+.home-hero h1 span {
+  display: block;
+  color: #e9d190;
+}
+
+.home-hero__description {
+  max-width: 38rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  color: rgb(255 253 246 / 0.88);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.home-hero__button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.home-hero__button:hover {
+  transform: translateY(-2px);
+}
+
+.home-hero__button--primary {
+  background: #d1a849;
+  color: #18372f;
+}
+
+.home-hero__button--primary:hover {
+  background: #ecd078;
+  color: #18372f;
+}
+
+.home-hero__button--secondary {
+  border: 1px solid rgb(255 253 246 / 0.62);
+  color: #fffdf6;
+}
+
+.home-hero__button--secondary:hover {
+  border-color: #f0d58e;
+  background: rgb(255 253 246 / 0.12);
+  color: #fffdf6;
+}
+
+.home-hero__signature {
+  position: absolute;
+  right: max(var(--content-gutter), 1rem);
+  bottom: 2rem;
+  display: flex;
+  gap: 0.45rem;
+  opacity: 0.8;
+}
+
+.home-hero__signature span {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid #e9d190;
+  transform: rotate(45deg);
+}
+
+.home-hero__signature span:nth-child(2) {
+  margin-top: 0.7rem;
+}
+
+.explore-region {
+  position: relative;
+  scroll-margin-top: 5.25rem;
+  padding: clamp(4.5rem, 9vw, 8rem) var(--content-gutter) clamp(5rem, 10vw, 8.5rem);
+  background:
+    radial-gradient(ellipse at 7% 27%, rgb(79 125 72 / 0.1), transparent 27rem),
+    radial-gradient(ellipse at 100% 73%, rgb(169 111 10 / 0.06), transparent 32rem),
+    var(--cream);
+}
+
+.explore-region::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgb(169 111 10 / 0.48), transparent);
+  content: '';
+}
+
+.explore-region__inner {
+  width: min(100%, var(--content-max-width));
+  margin-inline: auto;
+}
+
+.explore-region__intro {
+  display: grid;
+  justify-items: center;
+  margin-bottom: clamp(2rem, 5vw, 3.75rem);
+  text-align: center;
+}
+
+.explore-region__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: var(--turmeric-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.explore-region__eyebrow span {
+  width: 1.75rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.explore-region__intro h2 {
+  color: var(--forest-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.explore-region__description {
+  max-width: 38rem;
+  margin-top: 1rem;
+  color: #665b4c;
+  font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.explore-region__gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: minmax(14rem, 16vw);
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+.region-card {
+  position: relative;
+  min-width: 0;
+  min-height: 15rem;
+  margin: 0;
+  overflow: hidden;
+  background: #82917a;
+  box-shadow: 0 1rem 2.5rem rgb(23 53 45 / 0.11);
+}
+
+.region-card--featured {
+  grid-column: span 7;
+  grid-row: span 2;
+  min-height: 34rem;
+}
+
+.region-card--medium {
+  grid-column: span 5;
+  min-height: 18rem;
+}
+
+.region-card--small {
+  grid-column: span 4;
+}
+
+.region-card--wide,
+.region-card--panorama {
+  grid-column: span 6;
+}
+
+.region-card--panorama {
+  grid-row: span 2;
+  min-height: 29rem;
+}
+
+.region-card__visual,
+.region-card__fallback,
+.region-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.region-card__visual {
+  overflow: hidden;
+  isolation: isolate;
+  background: #82917a;
+}
+
+.region-card__fallback {
+  z-index: 0;
+  background-image:
+    linear-gradient(180deg, rgb(235 226 197 / 0.08), transparent 48%, rgb(30 58 45 / 0.16)),
+    radial-gradient(ellipse at 72% 25%, rgb(231 226 201 / 0.62), transparent 38%),
+    radial-gradient(ellipse 90% 74% at 4% 112%, rgb(43 77 60 / 0.72) 0 34%, transparent 73%),
+    radial-gradient(ellipse 90% 74% at 96% 112%, rgb(67 98 74 / 0.68) 0 34%, transparent 75%),
+    linear-gradient(24deg, #486951 0%, #84947a 52%, #c0bda3 100%);
+}
+
+.region-card__visual--pale .region-card__fallback {
+  background-image:
+    linear-gradient(180deg, rgb(241 232 207 / 0.18), transparent 50%, rgb(23 53 45 / 0.2)),
+    radial-gradient(ellipse at 26% 22%, rgb(255 250 228 / 0.58), transparent 36%),
+    radial-gradient(ellipse 92% 72% at 2% 112%, rgb(104 131 107 / 0.72) 0 32%, transparent 74%),
+    radial-gradient(ellipse 90% 72% at 100% 112%, rgb(52 91 72 / 0.68) 0 33%, transparent 76%),
+    linear-gradient(150deg, #c3bfa4 0%, #87987e 52%, #46674f 100%);
+}
+
+.region-card__visual--moss .region-card__fallback,
+.region-card__visual--deep .region-card__fallback {
+  background-image:
+    linear-gradient(180deg, rgb(240 231 202 / 0.12), transparent 48%, rgb(17 45 34 / 0.24)),
+    radial-gradient(ellipse at 75% 24%, rgb(230 228 197 / 0.55), transparent 36%),
+    radial-gradient(ellipse 90% 78% at 5% 112%, rgb(37 76 58 / 0.78) 0 34%, transparent 75%),
+    radial-gradient(ellipse 92% 78% at 98% 112%, rgb(65 104 75 / 0.72) 0 32%, transparent 74%),
+    linear-gradient(155deg, #c1bea2 0%, #7e927a 44%, #315640 100%);
+}
+
+.region-card__visual--cool .region-card__fallback,
+.region-card__visual--silver .region-card__fallback,
+.region-card__visual--blue .region-card__fallback {
+  background-image:
+    linear-gradient(180deg, rgb(239 236 215 / 0.24), transparent 48%, rgb(18 47 39 / 0.2)),
+    radial-gradient(ellipse at 75% 14%, rgb(255 251 226 / 0.68), transparent 34%),
+    radial-gradient(ellipse at 62% 47%, rgb(191 208 192 / 0.36), transparent 58%),
+    radial-gradient(ellipse 92% 76% at 8% 112%, rgb(49 90 71 / 0.7) 0 34%, transparent 74%),
+    linear-gradient(24deg, #44694f 0%, #889781 53%, #c5c0a5 100%);
+}
+
+.region-card__visual--gold .region-card__fallback,
+.region-card__visual--amber .region-card__fallback,
+.region-card__visual--warm .region-card__fallback {
+  background-image:
+    linear-gradient(180deg, rgb(220 190 139 / 0.08), transparent 54%, rgb(23 53 45 / 0.18)),
+    radial-gradient(ellipse at 71% 25%, rgb(255 228 177 / 0.74), transparent 34%),
+    radial-gradient(ellipse 90% 76% at 8% 112%, rgb(70 104 78 / 0.74) 0 34%, transparent 74%),
+    radial-gradient(ellipse 90% 76% at 96% 112%, rgb(53 88 67 / 0.68) 0 32%, transparent 75%),
+    linear-gradient(160deg, #d1b994 0%, #99a084 46%, #496b51 100%);
+}
+
+.region-card__visual--cloud .region-card__fallback,
+.region-card__visual--fern .region-card__fallback {
+  background-image:
+    linear-gradient(180deg, rgb(235 229 207 / 0.16), transparent 48%, rgb(20 48 37 / 0.2)),
+    radial-gradient(ellipse at 42% 18%, rgb(245 238 215 / 0.6), transparent 36%),
+    radial-gradient(ellipse at 43% 58%, rgb(174 190 164 / 0.3), transparent 54%),
+    radial-gradient(ellipse 92% 76% at 10% 112%, rgb(49 89 67 / 0.72) 0 34%, transparent 75%),
+    linear-gradient(22deg, #476a52 0%, #89977d 52%, #beb99d 100%);
+}
+
+.region-card__image {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.region-card__visual[data-image-state='loaded'] .region-card__image {
+  opacity: 1;
+}
+
+.region-card__visual[data-image-state='missing'] .region-card__image {
+  display: none;
+}
+
+.region-card__caption {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  min-height: 6.25rem;
+  align-content: end;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  border-top: 1px solid rgb(255 253 246 / 0.16);
+  background: linear-gradient(180deg, rgb(17 38 30 / 0.08), rgb(17 38 30 / 0.72));
+  color: #fffdf6;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.region-card__name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 1.9vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0.045em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .region-card__image {
+    transition:
+      opacity 260ms ease,
+      transform 480ms cubic-bezier(0.2, 0.65, 0.3, 1);
+  }
+
+  .region-card:hover .region-card__image {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 48rem) {
+  .home-hero {
+    min-height: max(42rem, calc(100svh - 4.75rem));
+    align-items: flex-end;
+  }
+
+  .home-hero__visual {
+    background-position: 62% center, center;
+  }
+
+  .home-hero__wash {
+    background:
+      linear-gradient(180deg, rgb(14 44 39 / 0.08) 16%, rgb(14 44 39 / 0.54) 54%, rgb(13 40 34 / 0.9) 100%),
+      linear-gradient(90deg, rgb(13 39 34 / 0.28), transparent);
+  }
+
+  .home-hero__content {
+    padding-block: 4.5rem 5.5rem;
+  }
+
+  .home-hero h1 {
+    max-width: 11ch;
+    font-size: clamp(3rem, 11vw, 5rem);
+  }
+
+  .home-hero__description {
+    max-width: 34rem;
+  }
+
+  .home-hero__signature {
+    bottom: 1.5rem;
+  }
+
+  .explore-region__gallery {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: minmax(13rem, 26vw);
+  }
+
+  .explore-region {
+    scroll-margin-top: 4.75rem;
+  }
+
+  .region-card--featured {
+    grid-column: span 6;
+    grid-row: span 2;
+    min-height: 28rem;
+  }
+
+  .region-card--medium,
+  .region-card--wide,
+  .region-card--panorama {
+    grid-column: span 3;
+    grid-row: span 1;
+    min-height: 17rem;
+  }
+
+  .region-card--small {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 15rem;
+  }
+
+  .region-card--panorama {
+    grid-column: span 6;
+    min-height: 21rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .home-hero {
+    min-height: max(42rem, calc(100svh - 4.5rem));
+  }
+
+  .home-hero__content {
+    padding-block: 3rem 4.5rem;
+  }
+
+  .home-hero__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .home-hero__description {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .home-hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-hero__button {
+    width: min(100%, 19rem);
+  }
+
+  .explore-region {
+    padding-inline: 1rem;
+  }
+
+  .explore-region__intro {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .explore-region__intro h2 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+  }
+
+  .explore-region__gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .region-card--featured {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 22rem;
+  }
+
+  .region-card--medium,
+  .region-card--small,
+  .region-card--wide,
+  .region-card--panorama {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 15rem;
+  }
+}

@@ -1,0 +1,58 @@
+.scheme-record {
+  padding: clamp(1.1rem, 2.5vw, 1.8rem);
+  border: 1px solid rgb(36 81 67 / 0.2);
+  border-top: 2px solid var(--forest);
+  background: #fffdf8;
+}
+
+.scheme-record__eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--earth);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.scheme-record h3 {
+  color: var(--forest-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.scheme-record__fields {
+  display: grid;
+  gap: 0;
+  margin: 1rem 0 0;
+}
+
+.scheme-record__field {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.34fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-top: 1px solid rgb(36 81 67 / 0.14);
+}
+
+.scheme-record__field dt {
+  color: var(--forest-deep);
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.scheme-record__field dd {
+  margin: 0;
+  color: #5d5549;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 30rem) {
+  .scheme-record__field {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+}

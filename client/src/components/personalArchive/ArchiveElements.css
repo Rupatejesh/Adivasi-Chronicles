@@ -1,0 +1,25 @@
+/* Phase 08G only: never target locked page classes. */
+.personal-archive-page { width: 100%; max-width: none; margin: 0; padding: 0; background: var(--cream); }
+.personal-archive-page .inner-page-hero h1 { max-width: 17ch; }
+.personal-archive-page .inner-page-hero__description { max-width: 53ch; }
+.personal-archive-page .editorial-section { scroll-margin-top: 6rem; }
+.archive-kicker { color: #76552d; font-size: .74rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+.archive-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+.archive-filters button { min-height: 44px; padding: .65rem 1rem; border: 1px solid #9fae9e; border-radius: 2px; color: var(--forest-deep); background: #fffdf6; text-align: left; line-height: 1.4; }
+.archive-filters button:hover { background: #e4eadf; }
+.archive-filters button[aria-pressed='true'] { background: var(--forest-deep); color: #fffdf6; border-color: var(--forest-deep); }
+.archive-related { width: min(var(--content-width), var(--content-max-width)); margin: 0 auto; padding: 2.5rem 0 4rem; border-top: 1px solid var(--border); }
+.archive-related > div { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+.archive-related .editorial-cta { color: var(--forest-deep); border-color: #8a652e; }
+.archive-related .editorial-cta > span { color: #8a652e; }
+.archive-image { position: relative; isolation: isolate; display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden; background: #dce2d4; }
+.archive-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.archive-image__geometry { position: absolute; inset: 12%; border: 1px solid #869b82; }
+.archive-image__geometry::before, .archive-image__geometry::after { content: ''; position: absolute; width: 120%; height: 95%; top: 55%; left: -15%; border: 1px solid #899b80; border-radius: 50%; transform: rotate(-18deg); }
+.archive-image__geometry::after { left: 10%; top: 75%; transform: rotate(20deg); }
+.archive-image--culture { background: #e5d9c5; }
+.archive-image--culture .archive-image__geometry { inset: 18% 30%; transform: rotate(12deg); border-color: #a18a69; }
+.archive-image--personal { background: #e9e3d6; }
+.archive-image--personal .archive-image__geometry { inset: 12% 20%; transform: rotate(-5deg); }
+.archive-image__label { z-index: 1; padding: .5rem .8rem; margin: 1rem; text-align: center; background: #f8f3e8; color: #4d594c; font-size: .78rem; letter-spacing: .06em; }
+@media (max-width: 42rem) { .archive-related > div { flex-direction: column; align-items: flex-start; } }

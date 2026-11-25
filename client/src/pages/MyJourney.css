@@ -1,0 +1,24 @@
+.journey-page .inner-page-hero { background: linear-gradient(90deg, rgb(244 237 219 / .96), rgb(234 232 211 / .85)), var(--inner-hero-image, none), #d1d6bb; }
+.journey-page .inner-page-hero h1 { color: var(--forest-deep); max-width: 18ch; }
+.journey-page .inner-page-hero__description { color: #4c5949; }
+.journey-page .inner-page-hero__eyebrow, .journey-page .inner-page-hero__metadata { color: #76552d; }
+.journey-page .inner-page-hero__signature { border-color: #76552d; }
+.journey-page .inner-page-hero::before { border-color: #71866e; border-style: dashed; bottom: -5%; height: 65%; transform: rotate(-20deg); }
+.journey-page .inner-page-hero::after { border-color: #9aa48b; bottom: -17%; height: 60%; transform: rotate(-20deg); }
+.journey-notebook { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.journey-notebook__margin { padding: 1rem; background: #fffdf7; box-shadow: 0 .7rem 2rem #17352d0d; transform: rotate(-2deg); margin: .5rem; }
+.journey-notebook__margin .archive-image { aspect-ratio: 4 / 5; }
+.journey-notebook__margin > p { padding: 1.1rem .2rem .2rem; font: italic 1.1rem Georgia, serif; color: #65523b; }
+.journey-areas { border-left: 1px solid #b5b89d; padding-left: clamp(1rem, 3vw, 2.5rem); }
+.journey-area { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 1rem; padding: 1.6rem 0; border-bottom: 1px solid #c8cbb9; }
+.journey-area:first-child { padding-top: 0; }
+.journey-area > span { color: #76552d; font: 1rem Georgia, serif; padding-top: .3rem; }
+.journey-area h3 { font: 400 clamp(1.5rem, 2.4vw, 2rem) Georgia, serif; margin-bottom: .6rem; }
+.journey-area p { color: #535e50; font-size: .95rem; }
+.journey-empty { position: relative; border-left: 1px dashed #8c987d; padding: 2rem clamp(1.5rem, 5vw, 4rem); }
+.journey-empty__trail { position: absolute; top: 2.5rem; left: -.35rem; width: .65rem; height: .65rem; border: 1px solid #7d6338; border-radius: 50%; background: var(--cream); }
+.journey-empty h3 { font: 400 1.7rem Georgia, serif; margin-bottom: 1rem; }
+.journey-timeline { list-style: none; padding-left: 1.5rem; border-left: 1px solid #8c987d; }
+.journey-timeline li { padding: 1.5rem 0; }
+.journey-timeline article { display: grid; gap: .8rem; }
+@media (max-width: 48rem) { .journey-notebook { grid-template-columns: minmax(0, 1fr); } .journey-notebook__margin { width: min(90%, 22rem); margin: 0 auto 1rem; } }

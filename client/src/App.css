@@ -1,0 +1,122 @@
+.container {
+  width: min(var(--content-width), var(--content-max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  color: var(--forest-deep);
+}
+
+.page-shell {
+  width: min(var(--content-width), var(--content-max-width));
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+
+.page-header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.page-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 0.75rem 2rem rgb(23 53 45 / 0.08);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.65rem 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--forest);
+  color: var(--text-light);
+}
+
+.button-primary:hover {
+  background: var(--forest-deep);
+  color: var(--text-light);
+}
+
+.button-secondary {
+  border-color: var(--forest);
+  background: transparent;
+  color: var(--forest-deep);
+}
+
+.button-secondary:hover {
+  border-color: var(--warm-orange);
+  color: var(--warm-orange);
+}
+
+main {
+  width: min(var(--content-width), var(--content-max-width));
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 8vw, 6rem);
+}
+
+main > p {
+  margin-top: 1rem;
+  color: var(--earth);
+}
+
+.foundation-screen {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.foundation-screen h1 {
+  margin: 0;
+  color: var(--forest-deep);
+  font-size: clamp(2rem, 7vw, 4rem);
+  letter-spacing: 0.08em;
+}
+
+.foundation-screen p {
+  margin: 0;
+  color: var(--earth);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.foundation-screen span {
+  color: var(--forest);
+  font-size: 1rem;
+}

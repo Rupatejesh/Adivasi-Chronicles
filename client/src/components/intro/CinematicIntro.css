@@ -1,0 +1,133 @@
+.ghats-intro { position: relative; isolation: isolate; width: 100%; max-width: none; min-height: 100svh; margin: 0; padding: 0; overflow: hidden; background: #102e32; color: #fff6e5; display: flex; flex-direction: column; justify-content: center; }
+.ghats-intro__backdrop { position: absolute; inset: 0; z-index: -2; opacity: .22; overflow: hidden; }
+.ghats-intro__backdrop img { width: 100%; height: 100%; object-fit: cover; filter: blur(18px); transform: scale(1.08); }
+.ghats-intro__opening { position: absolute; inset: 0; z-index: 1; background: #102e32; opacity: 1; transition: opacity 1.4s ease; }
+.ghats-intro__roots-image { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; opacity: 0; transition: opacity 1.8s ease; }
+.ghats-intro__roots-image.is-loaded { opacity: .9; }
+.ghats-intro__opening::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 35%, #102e3250 55%, #102e32 100%); }
+.ghats-intro__roots-copy { position: absolute; z-index: 1; bottom: 10rem; left: 1.5rem; right: 1.5rem; text-align: center; text-transform: uppercase; letter-spacing: .13em; font-size: clamp(.75rem, 1.5vw, 1.1rem); text-shadow: 0 2px 8px #102e32; }
+.ghats-intro__roots-copy p { margin: .6rem 0; }
+.ghats-intro--launch .ghats-intro__opening, .ghats-intro--leaving .ghats-intro__opening { opacity: 0; pointer-events: none; visibility: hidden; transition: opacity 1.4s ease, visibility 0s 1.4s; }
+.ghats-intro__launch { position: relative; width: 100%; margin: 0 auto; opacity: 0; transition: opacity 1.5s ease; }
+.ghats-intro--launch .ghats-intro__launch, .ghats-intro--leaving .ghats-intro__launch { opacity: 1; }
+.ghats-intro__artwork { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: calc(100svh - 12rem); object-fit: cover; object-position: center; opacity: 0; }
+.ghats-intro__artwork.is-loaded { opacity: 1; }
+.ghats-intro__fallback { min-height: 55svh; display: grid; place-items: center; background: radial-gradient(ellipse at 75% 20%, #d6c69b55, transparent 45%), linear-gradient(155deg, #102e32, #406555); font: 1.2rem Georgia, serif; }
+.ghats-intro__mist { pointer-events: none; position: absolute; z-index: 2; inset: 0 -15%; background: radial-gradient(ellipse at 50% 65%, #f4f0df55, transparent 60%); opacity: .18; animation: intro-mist 6s ease-in-out both; }
+@keyframes intro-mist { 0% { transform: translateX(-7%); opacity: .4; } 60% { opacity: .08; } 80% { opacity: .5; } 100% { transform: translateX(7%); opacity: 0; } }
+.ghats-intro__navigation { position: relative; z-index: 3; padding: .8rem 1rem; text-align: center; background: #102e32ed; }
+.ghats-intro__navigation h1 { color: #fff6e5; font: 600 .9rem Georgia, serif; letter-spacing: .13em; margin: 0; }
+.ghats-intro__navigation p { font-size: .75rem; margin: .35rem auto; }
+.ghats-intro__navigation small { display: block; font-size: .65rem; color: #e3dbc7; margin-top: .45rem; }
+.ghats-intro button { min-height: 44px; border: 1px solid #e9d9b9; border-radius: .3rem; padding: .65rem 1.1rem; font: inherit; cursor: pointer; }
+.ghats-intro__skip { position: absolute; z-index: 4; top: 1.5rem; right: 1.5rem; background: #163a33; color: #fff6e5; }
+.ghats-intro__enter { margin-top: .35rem; background: #f5eddd; color: #163a33; font-size: .8rem !important; letter-spacing: .1em; }
+.ghats-intro button:focus-visible { outline: 3px solid #ecc37b; outline-offset: 4px; }
+.ghats-intro__exit { pointer-events: none; position: absolute; z-index: 5; inset: 0; background: radial-gradient(ellipse at 70% 30%, #fff5d9, #f5efdf); opacity: 0; transition: opacity .6s ease; }
+.ghats-intro--leaving .ghats-intro__exit { opacity: 1; }
+@media (min-width: 1000px) { .ghats-intro__launch { width: min(100%, calc((100svh - 12rem) * 1.7778)); } .ghats-intro__roots-image { object-fit: contain; } }
+@media (max-width: 800px) { .ghats-intro__artwork { aspect-ratio: 1.4; object-position: 50% 55%; } }
+@media (max-width: 480px) { .ghats-intro__artwork { aspect-ratio: 1.28; object-position: 50% 57%; } .ghats-intro__roots-image { object-position: 48% 32%; } .ghats-intro__roots-copy { font-size: .7rem; } }
+@media (prefers-reduced-motion: reduce) { .ghats-intro__mist { animation: none; opacity: 0; } .ghats-intro__backdrop img { transform: none; } .ghats-intro__opening, .ghats-intro__roots-image, .ghats-intro__launch, .ghats-intro__exit { transition-duration: .18s; } }
+
+/* One-time decorative reveal; layers never intercept controls. */
+.launch-effects { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.launch-effects * { pointer-events: none; }
+.launch-effects__curtain { position: absolute; top: 0; bottom: 0; width: 50.2%; background: linear-gradient(90deg, #071511, #163b2e 75%, #10251d); animation: curtain-left 1.9s cubic-bezier(.4, 0, .2, 1) .15s both; }
+.launch-effects__curtain--left { left: 0; border-right: 1px solid #bd995c; box-shadow: 3px 0 15px #c59e5233; }
+.launch-effects__curtain--right { right: 0; background: linear-gradient(270deg, #071511, #163b2e 75%, #10251d); border-left: 1px solid #bd995c; animation-name: curtain-right; }
+.launch-effects__light { position: absolute; inset: 35% 35% 4%; background: radial-gradient(ellipse at 50% 85%, #f5be6355, transparent 65%); animation: reveal-warmth 1.6s ease-out .3s both; }
+.launch-effects__mist { position: absolute; inset: 0 20%; background: radial-gradient(ellipse, #f5edd844, transparent 65%); animation: reveal-mist 1.9s ease-out both; }
+.launch-effects__petal { position: absolute; left: var(--x); top: -1rem; width: .45rem; height: .7rem; border-radius: 80% 20% 65% 35%; background: var(--petal-color); animation: launch-petal var(--duration) ease-in var(--delay) both; }
+.launch-effects__ember { position: absolute; left: var(--x); bottom: 5%; width: 3px; height: 5px; border-radius: 50%; background: #d9a458; box-shadow: 0 0 5px #e5ac6077; animation: launch-ember 1.4s ease-out var(--delay) both; }
+@keyframes curtain-left { from { transform: translateX(0); } to { transform: translateX(-101%); } }
+@keyframes curtain-right { from { transform: translateX(0); } to { transform: translateX(101%); } }
+@keyframes reveal-warmth { 0%, 100% { opacity: 0; } 35% { opacity: .65; } }
+@keyframes reveal-mist { from { opacity: .5; transform: scaleX(.3); } to { opacity: 0; transform: scaleX(2); } }
+@keyframes launch-petal { 0% { opacity: 0; transform: translate(0, 0) rotate(-15deg); } 12% { opacity: .65; } 80% { opacity: .4; } 100% { opacity: 0; transform: translate(var(--drift), 65vh) rotate(115deg); } }
+@keyframes launch-ember { 0%, 100% { opacity: 0; } 20% { opacity: .7; } 100% { transform: translate(var(--drift), -65px) scale(.4); } }
+.ghats-intro--launch .ghats-intro__opening { transition: opacity .35s ease, visibility 0s .35s; }
+.ghats-intro--launch .ghats-intro__launch { transition-duration: .25s; }
+.ghats-intro__enter { animation: archive-cta .45s ease-out both; }
+@keyframes archive-cta { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) { .launch-effects__petal:nth-of-type(n+9), .launch-effects__ember:nth-of-type(n+22) { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .launch-effects { display: none; }
+  .ghats-intro__enter { animation: none; }
+  .ghats-intro--launch .ghats-intro__opening { transition: opacity .18s ease, visibility 0s .18s; }
+  .ghats-intro--launch .ghats-intro__launch { transition-duration: .18s; }
+}
+
+/* Full-viewport scenes replace the earlier framed artwork presentation. */
+.ghats-intro { width: 100vw; height: 100vh; height: 100svh; min-height: 0; display: block; }
+.ghats-intro__opening, .ghats-intro__launch { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; }
+.ghats-intro__roots-image, .ghats-intro__artwork { width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: cover; }
+.ghats-intro__roots-image { object-position: 50% 32%; animation: roots-camera 5s ease-out both; }
+.ghats-intro__opening::after { background: radial-gradient(ellipse at 50% 38%, transparent 30%, #071d2566 100%), linear-gradient(transparent 60%, #102e32d9); }
+.ghats-intro__roots-copy { bottom: 15%; max-width: 42rem; margin: auto; }
+.ghats-intro__roots-copy p { margin-inline: auto; }
+.ghats-intro__artwork { object-position: 50% 56%; }
+.ghats-intro__backdrop { opacity: .75; }
+.ghats-intro__backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#102e3244, transparent 40%, #102e3299); }
+.ghats-intro__identity { position: absolute; z-index: 4; top: 1.6rem; left: clamp(1rem, 3vw, 3rem); max-width: calc(100% - 11rem); margin: 0; padding: .5rem .65rem; background: #102e32dc; color: #fff6e5; font: 600 clamp(.65rem, 1vw, .85rem) Georgia, serif; letter-spacing: .12em; }
+.ghats-intro__navigation { position: absolute; bottom: 0; left: 0; right: 0; padding: .6rem 1rem max(.65rem, env(safe-area-inset-bottom)); background: linear-gradient(transparent, #102e32e8); }
+.ghats-intro__navigation p { display: none; }
+.ghats-intro__navigation small { font-size: .6rem; }
+.ghats-intro--roots .ghats-intro__navigation, .ghats-intro--journey .ghats-intro__navigation, .ghats-intro--itda .ghats-intro__navigation { visibility: hidden; }
+.ghats-intro--journey .ghats-intro__opening, .ghats-intro--itda .ghats-intro__opening { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .7s ease, visibility 0s .7s; }
+.ghats-intro--launch .ghats-intro__opening { transition: none; }
+.ghats-intro__mist { z-index: 2; }
+.district-journey { position: absolute; inset: 0; overflow: hidden; display: grid; place-items: center; padding: 9rem 1.5rem 3rem; background: radial-gradient(ellipse at 78% 15%, #d8c18d77, transparent 45%), linear-gradient(#173c40, #42645c 58%, #15382e); animation: district-arrival .65s ease-out both; }
+.district-journey__landscape { position: absolute; inset: 0; pointer-events: none; }
+.district-journey__landscape i { position: absolute; inset: 30% -10% 0; background: #2a4c47; clip-path: polygon(0 55%, 15% 32%, 30% 53%, 45% 10%, 63% 38%, 80% 18%, 100% 48%, 100% 100%, 0 100%); }
+.district-journey__landscape i:nth-child(2) { inset: 48% -15% 0; background: #1c4038; transform: scaleX(-1); }
+.district-journey__landscape i:nth-child(3) { inset: 65% -10% 0; background: #12342c; }
+.district-journey__copy { position: relative; max-width: 60rem; text-align: center; color: #fff6e5; text-shadow: 0 2px 12px #102e32; }
+.district-journey__copy h2 { font: 500 clamp(2rem, 5vw, 5rem)/1.1 Georgia, serif; color: #fff6e5; margin: 1rem 0; }
+.district-journey__copy p { margin: .75rem auto; font-size: clamp(.8rem, 1.5vw, 1rem); }
+.district-journey__eyebrow { letter-spacing: .15em; text-transform: uppercase; }
+.district-journey__places { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; padding: 0; margin: 1.5rem auto 1rem; max-width: 44rem; list-style: none; }
+.district-journey__place { position: relative; isolation: isolate; overflow: hidden; padding: .5rem .85rem; border: 1px solid #e1d8b755; border-radius: 2px; color: #fff6e5; background: #102e32ba; font-size: .85rem; }
+.district-journey__place img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; z-index: -1; }
+.district-journey__place img.is-loaded { opacity: .3; }
+.district-journey__copy small { font-size: .65rem; color: #e0dece; }
+.district-journey__independent { padding-top: 1.5rem; color: #e3dfd1; font-size: .8rem !important; }
+@keyframes roots-camera { from { transform: scale(1); } to { transform: scale(1.025); } }
+@keyframes district-arrival { from { opacity: 0; } to { opacity: 1; } }
+@media (max-aspect-ratio: 4/3) {
+  /* Portrait adaptation: preserve the embedded title over the same-image extension. */
+  .ghats-intro__artwork { object-fit: contain; object-position: center; }
+  .ghats-intro__roots-image { object-fit: cover; object-position: 48% 32%; }
+}
+@media (max-width: 480px) {
+  .district-journey { padding: 9rem 1rem 2rem; }
+  .district-journey__places { gap: .4rem; margin-top: 1rem; }
+  .district-journey__place { font-size: .72rem; padding: .4rem .55rem; }
+  .district-journey__eyebrow { font-size: .7rem !important; }
+  .ghats-intro__identity { left: .7rem; font-size: .65rem; letter-spacing: .06em; }
+}
+@media (prefers-reduced-motion: reduce) { .ghats-intro__roots-image { animation: none; transform: none; } .district-journey { animation-duration: .18s; } }
+
+.ghats-intro--alluri .ghats-intro__opening, .ghats-intro--district .ghats-intro__opening { opacity: 0; visibility: hidden; pointer-events: none; }
+.ghats-intro--alluri .ghats-intro__navigation, .ghats-intro--district .ghats-intro__navigation { visibility: hidden; }
+.intro-artwork { position: absolute; inset: 0; overflow: hidden; background: #173d32; animation: district-arrival .5s ease-out both; }
+.intro-artwork__extension, .intro-artwork__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.intro-artwork__extension { filter: blur(18px) brightness(.6); transform: scale(1.05); }
+.intro-artwork__image { opacity: 0; }
+.intro-artwork__image.is-loaded { opacity: 1; }
+.intro-artwork__fallback { position: absolute; top: 45%; width: 100%; max-width: none; text-align: center; color: #fff6e5; padding: 1rem; }
+.alluri-moment { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 1.5rem 3rem; background: radial-gradient(ellipse at 65% 30%, #c89c4b25, transparent 55%), linear-gradient(145deg, #071d1b, #193e33); animation: district-arrival .6s ease-out both; }
+.alluri-moment h2 { color: #e5cc94; font: 500 clamp(2.4rem, 6vw, 6rem)/1.12 Georgia, serif; letter-spacing: .08em; margin: 1.5rem 0; }
+.alluri-moment p { margin-inline: auto; color: #f0e4c9; font-size: clamp(.75rem, 1.4vw, 1rem); }
+@media (max-aspect-ratio: 4/3) { .intro-artwork__image { object-fit: contain; } }
+@media (prefers-reduced-motion: reduce) { .intro-artwork, .alluri-moment { animation-duration: .18s; } .intro-artwork__extension { transform: none; } }
+
+/* Information-heavy artwork stays complete at every viewport size. */
+.intro-artwork__image, .ghats-intro__artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.ghats-intro--community .ghats-intro__opening { opacity: 0; visibility: hidden; pointer-events: none; }
+.ghats-intro--community .ghats-intro__navigation { visibility: hidden; }

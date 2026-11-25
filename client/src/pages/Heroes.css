@@ -1,0 +1,506 @@
+.heroes-page {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+}
+
+.heroes-page .inner-page-hero {
+  min-height: clamp(29rem, 51vw, 41rem);
+}
+
+.heroes-page .inner-page-hero__content {
+  max-width: var(--content-max-width);
+}
+
+.heroes-category-index {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgb(36 81 67 / 0.22);
+  border-bottom: 1px solid rgb(36 81 67 / 0.22);
+}
+
+.heroes-category-index a {
+  display: flex;
+  min-width: 0;
+  min-height: 4.5rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem clamp(0.55rem, 1.5vw, 1.2rem);
+  border-right: 1px solid rgb(36 81 67 / 0.16);
+  color: var(--forest-deep);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.heroes-category-index a:first-child {
+  border-left: 1px solid rgb(36 81 67 / 0.16);
+}
+
+.heroes-category-index a:hover,
+.heroes-category-index a:focus-visible {
+  background: rgb(79 125 72 / 0.08);
+  color: var(--forest-deep);
+}
+
+.heroes-category-index a span {
+  flex: 0 0 auto;
+  color: var(--turmeric-gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.heroes-groups {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.heroes-group {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 4.5rem minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding: clamp(1.2rem, 2.7vw, 2rem);
+  border-top: 1px solid rgb(36 81 67 / 0.24);
+  background:
+    radial-gradient(ellipse at 100% 0, rgb(122 80 54 / 0.055), transparent 30rem),
+    rgb(255 253 248 / 0.55);
+}
+
+.heroes-group:last-child {
+  border-bottom: 1px solid rgb(36 81 67 / 0.24);
+}
+
+.heroes-group__number {
+  align-self: start;
+  color: var(--turmeric-gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.heroes-group__eyebrow {
+  margin-bottom: 0.4rem;
+  color: var(--earth);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.heroes-group__copy h3 {
+  color: var(--forest-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.45rem, 2.7vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.heroes-group__copy > p:last-child {
+  max-width: 62ch;
+  margin-top: 0.55rem;
+  color: #5d5549;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.heroes-group__mark {
+  justify-self: end;
+  width: 1.1rem;
+  aspect-ratio: 1;
+  border: 1px solid rgb(169 111 10 / 0.65);
+  transform: rotate(45deg);
+}
+
+.biography-archive {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.78fr) minmax(0, 1.22fr);
+  align-items: stretch;
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+}
+
+.biography-archive__supporting {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.6vw, 1.2rem);
+}
+
+.biography-archive__supporting > .biography-preview:last-child {
+  grid-column: 1 / -1;
+}
+
+.biography-archive__supporting > .biography-preview:last-child .biography-preview__link {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-rows: minmax(10rem, auto);
+}
+
+.biography-archive__supporting > .biography-preview:last-child .biography-preview__portrait {
+  min-height: 10rem;
+}
+
+.biography-preview {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgb(36 81 67 / 0.18);
+  background: #fbf8ef;
+}
+
+.biography-preview__link {
+  display: grid;
+  height: 100%;
+  grid-template-rows: minmax(12.5rem, 1fr) auto;
+  color: var(--forest-deep);
+  text-decoration: none;
+}
+
+.biography-preview--featured .biography-preview__link {
+  grid-template-rows: minmax(28rem, 1fr) auto;
+}
+
+.biography-preview__link:hover,
+.biography-preview__link:focus-visible {
+  color: var(--forest-deep);
+}
+
+.biography-preview__portrait {
+  position: relative;
+  display: grid;
+  min-height: 12.5rem;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 18%, rgb(224 207 174 / 0.42), transparent 36%),
+    radial-gradient(ellipse at 50% 70%, rgb(64 84 66 / 0.78), transparent 56%),
+    linear-gradient(155deg, #8a806c, #3c5a49 74%);
+}
+
+.biography-preview__portrait-fallback,
+.biography-preview__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.biography-preview__portrait-fallback {
+  background:
+    radial-gradient(ellipse at 50% 18%, rgb(224 207 174 / 0.42), transparent 36%),
+    radial-gradient(ellipse at 50% 70%, rgb(64 84 66 / 0.78), transparent 56%),
+    linear-gradient(155deg, #8a806c, #3c5a49 74%);
+}
+
+.biography-preview__image {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center 28%;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.biography-preview__portrait[data-image-state='loaded'] .biography-preview__image {
+  opacity: 1;
+}
+
+.biography-preview__portrait[data-image-state='loaded'] .biography-preview__initials {
+  opacity: 0;
+}
+
+.biography-preview__portrait::before,
+.biography-preview__portrait::after {
+  position: absolute;
+  z-index: -1;
+  top: 13%;
+  left: 50%;
+  width: 56%;
+  height: 78%;
+  border: 1px solid rgb(248 238 214 / 0.3);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0 / 37% 37% 0 0;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.biography-preview__portrait::after {
+  top: 18%;
+  width: 47%;
+  height: 73%;
+  border-color: rgb(248 238 214 / 0.15);
+}
+
+.biography-preview__portrait-frame {
+  position: absolute;
+  z-index: 1;
+  inset: 0.8rem;
+  border: 1px solid rgb(248 238 214 / 0.22);
+}
+
+.biography-preview__initials {
+  position: absolute;
+  right: 0;
+  bottom: 0.85rem;
+  left: 0;
+  color: rgb(255 253 246 / 0.84);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-shadow: 0 2px 12px rgb(14 35 28 / 0.4);
+}
+
+.biography-preview__portrait-index {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  display: grid;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(248 238 214 / 0.5);
+  color: #fffdf6;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.biography-preview__copy {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.biography-preview__category {
+  margin-bottom: 0.45rem;
+  color: var(--earth);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.biography-preview__copy h3 {
+  color: var(--forest-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+.biography-preview__description {
+  margin-top: 0.55rem;
+  color: #5d5549;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.biography-preview__link-label {
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+  color: var(--forest);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.biography-preview__link-label span {
+  color: var(--turmeric-gold);
+}
+
+.biography-preview--featured .biography-preview__portrait {
+  min-height: 28rem;
+  background:
+    radial-gradient(ellipse at 52% 16%, rgb(232 211 175 / 0.53), transparent 32%),
+    radial-gradient(ellipse at 45% 74%, rgb(61 85 67 / 0.82), transparent 58%),
+    linear-gradient(155deg, #99876e, #375747 78%);
+}
+
+.biography-preview--featured .biography-preview__portrait::before {
+  width: 62%;
+  height: 82%;
+}
+
+.biography-preview--featured .biography-preview__initials {
+  bottom: 1.4rem;
+  font-size: clamp(3rem, 5.6vw, 5.2rem);
+}
+
+.heroes-integrity-note {
+  display: grid;
+  width: min(var(--content-width), var(--content-max-width));
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+  color: #5d5549;
+}
+
+.heroes-integrity-note__rule {
+  width: 2.4rem;
+  height: 1px;
+  margin-top: 0.8rem;
+  background: var(--turmeric-gold);
+}
+
+.heroes-integrity-note p {
+  max-width: 64ch;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.05rem, 1.65vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.heroes-page__cross-navigation {
+  width: min(var(--content-width), var(--content-max-width));
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .biography-preview__portrait {
+    transition: filter 320ms ease;
+  }
+
+  .biography-preview__link:hover .biography-preview__portrait {
+    filter: saturate(1.08);
+  }
+
+  .biography-preview__link:hover .biography-preview__link-label span {
+    transform: translateX(0.15rem);
+  }
+}
+
+@media (max-width: 60rem) {
+  .heroes-category-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroes-category-index a:nth-child(3) {
+    border-left: 1px solid rgb(36 81 67 / 0.16);
+  }
+
+  .heroes-category-index a:nth-child(n + 3) {
+    border-top: 1px solid rgb(36 81 67 / 0.16);
+  }
+
+  .biography-archive {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .biography-preview--featured .biography-preview__link {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    grid-template-rows: minmax(20rem, auto);
+  }
+
+  .biography-preview--featured .biography-preview__portrait {
+    min-height: 20rem;
+  }
+
+  .biography-preview--featured .biography-preview__copy {
+    align-self: center;
+  }
+}
+
+@media (max-width: 42rem) {
+  .heroes-page .inner-page-hero {
+    min-height: 34rem;
+  }
+
+  .heroes-category-index {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroes-category-index a,
+  .heroes-category-index a:first-child,
+  .heroes-category-index a:nth-child(3) {
+    min-height: 3.5rem;
+    border-top: 1px solid rgb(36 81 67 / 0.16);
+    border-right: 0;
+    border-left: 0;
+    padding-inline: 0.25rem;
+  }
+
+  .heroes-category-index a:first-child {
+    border-top: 0;
+  }
+
+  .heroes-group {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 1.1rem 0.8rem;
+  }
+
+  .heroes-group__mark {
+    display: none;
+  }
+
+  .heroes-group__copy h3 {
+    font-size: 1.55rem;
+  }
+
+  .heroes-group__copy > p:last-child {
+    font-size: 0.93rem;
+  }
+
+  .biography-preview--featured .biography-preview__link {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 21rem auto;
+  }
+
+  .biography-preview--featured .biography-preview__portrait {
+    min-height: 21rem;
+  }
+
+  .biography-archive__supporting {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .biography-archive__supporting > .biography-preview:last-child .biography-preview__link {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 18rem auto;
+  }
+
+  .biography-preview__link {
+    grid-template-rows: 18rem auto;
+  }
+
+  .biography-preview__portrait {
+    min-height: 18rem;
+  }
+
+  .heroes-integrity-note {
+    grid-template-columns: 1.7rem minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .heroes-integrity-note__rule {
+    width: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biography-preview__image,
+  .biography-preview__portrait,
+  .biography-preview__link-label span {
+    transition: none;
+    transform: none;
+  }
+}
+.biography-quotation, .portrait-credit { padding: 1rem 1.4rem; font-size: .85rem; color: #385348; background: #f4efdf; }
+.biography-quotation figure, .biography-quotation blockquote, .biography-quotation p { margin: 0; }
+.biography-quotation figcaption { margin-top: .7rem; overflow-wrap: anywhere; }
+.biography-quotation a:focus-visible { outline: 2px solid #385348; outline-offset: 3px; }
+.hero-detail { padding: 1.5rem; }
+.hero-detail > .biography-preview { max-width: 48rem; margin: 2rem auto; }

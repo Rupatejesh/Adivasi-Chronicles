@@ -1,0 +1,171 @@
+.constitution-page {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: #f7f3e9;
+}
+
+.constitution-page .inner-page-hero {
+  min-height: clamp(29rem, 50vw, 40rem);
+  align-items: center;
+  color: var(--forest-deep);
+  background-color: #e9e3d5;
+  background-image:
+    linear-gradient(90deg, rgb(248 245 236 / 0.97) 0%, rgb(248 245 236 / 0.87) 50%, rgb(248 245 236 / 0.16) 100%),
+    radial-gradient(ellipse at 83% 18%, rgb(255 255 252 / 0.83), transparent 34%),
+    linear-gradient(130deg, #e8e2d4 0%, #d9d8c9 51%, #bdc8b8 100%);
+}
+
+.constitution-page .inner-page-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max-width);
+}
+
+.constitution-page .inner-page-hero__eyebrow,
+.constitution-page .inner-page-hero__metadata {
+  color: #71552c;
+}
+
+.constitution-page .inner-page-hero h1 {
+  max-width: 18ch;
+  color: var(--forest-deep);
+}
+
+.constitution-page .inner-page-hero__description {
+  max-width: 42rem;
+  color: #464b43;
+}
+
+.constitution-page .inner-page-hero__signature {
+  border-color: #8a692f;
+}
+
+.constitution-page .inner-page-hero::before {
+  right: 10%;
+  bottom: 9%;
+  left: auto;
+  width: clamp(13rem, 30vw, 25rem);
+  height: 78%;
+  border: 1px solid rgb(55 77 65 / 0.23);
+  border-bottom: 0;
+  border-radius: 0.1rem 0.1rem 0 0;
+  box-shadow:
+    0 0 0 0.55rem rgb(248 245 236 / 0.2),
+    0 0 0 1.1rem rgb(55 77 65 / 0.07);
+}
+
+.constitution-page .inner-page-hero::after {
+  right: 14%;
+  bottom: 9%;
+  left: auto;
+  width: clamp(10.5rem, 25vw, 21rem);
+  height: 72%;
+  border: 1px solid rgb(55 77 65 / 0.13);
+  border-bottom: 0;
+  border-radius: 0.1rem 0.1rem 0 0;
+}
+
+.constitution-page .editorial-section--paper {
+  background:
+    linear-gradient(90deg, transparent 0, transparent calc(var(--content-gutter) + 0.8rem), rgb(122 80 54 / 0.12) calc(var(--content-gutter) + 0.8rem), rgb(122 80 54 / 0.12) calc(var(--content-gutter) + 0.86rem), transparent calc(var(--content-gutter) + 0.86rem)),
+    radial-gradient(ellipse at 100% 0, rgb(79 125 72 / 0.07), transparent 30rem),
+    #f7f3e9;
+}
+
+.constitution-page .section-intro__eyebrow,
+.constitution-page .civic-explorer__entry-label {
+  color: #806035;
+}
+
+.constitution-page .section-intro h2,
+.constitution-page .civic-explorer__entry h3,
+.constitution-page .reference-block h2 {
+  color: #183a31;
+}
+
+.constitution-page .civic-explorer__index {
+  background: rgb(255 253 248 / 0.36);
+}
+
+.constitution-page .civic-explorer__entry {
+  min-height: 15rem;
+  background:
+    linear-gradient(90deg, transparent 0 2.6rem, rgb(122 80 54 / 0.11) 2.6rem 2.66rem, transparent 2.66rem),
+    #fffdf7;
+}
+
+.constitution-page .civic-explorer__entry:nth-child(3n) {
+  background:
+    linear-gradient(90deg, transparent 0 2.6rem, rgb(122 80 54 / 0.11) 2.6rem 2.66rem, transparent 2.66rem),
+    #f1eee4;
+}
+
+.constitution-page .reference-block {
+  border-color: rgb(47 73 61 / 0.24);
+  background: transparent;
+}
+
+.constitution-page .reference-block__eyebrow {
+  color: #806035;
+}
+
+.constitution-page .reference-block__body > p {
+  color: #4e554d;
+}
+
+.constitution-page__cross-navigation {
+  width: min(var(--content-width), var(--content-max-width));
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.constitution-page__cross-navigation .editorial-cta--earth {
+  color: var(--forest-deep);
+  border-color: #9a7138;
+}
+
+.constitution-page__cross-navigation .editorial-cta--earth > span {
+  color: #8c642e;
+}
+
+@media (max-width: 48rem) {
+  .constitution-page .inner-page-hero {
+    min-height: 34rem;
+    align-items: flex-end;
+    background-image:
+      linear-gradient(90deg, rgb(248 245 236 / 0.97) 0%, rgb(248 245 236 / 0.84) 67%, rgb(248 245 236 / 0.34) 100%),
+      radial-gradient(ellipse at 83% 18%, rgb(255 255 252 / 0.83), transparent 34%),
+      linear-gradient(130deg, #e8e2d4 0%, #d9d8c9 51%, #bdc8b8 100%);
+  }
+
+  .constitution-page .inner-page-hero::before {
+    right: 5%;
+    width: 12rem;
+    opacity: 0.7;
+  }
+
+  .constitution-page .inner-page-hero::after {
+    right: 9%;
+    width: 10rem;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 30rem) {
+  .constitution-page .inner-page-hero {
+    min-height: 34rem;
+    background-image:
+      linear-gradient(180deg, rgb(248 245 236 / 0.74), rgb(248 245 236 / 0.94) 55%, #e8e2d4),
+      radial-gradient(ellipse at 80% 16%, rgb(255 255 252 / 0.83), transparent 34%),
+      linear-gradient(130deg, #e8e2d4 0%, #d9d8c9 51%, #bdc8b8 100%);
+  }
+
+  .constitution-page .editorial-section--paper {
+    background:
+      radial-gradient(ellipse at 100% 0, rgb(79 125 72 / 0.07), transparent 30rem),
+      #f7f3e9;
+  }
+}
