@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { PageBreadcrumb } from '../components/innerPage/InnerPageFoundation.jsx';
 import { contactApi, getApiErrorMessage } from '../services/api.js';
 import './EditorialPages.css';

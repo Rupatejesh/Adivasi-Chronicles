@@ -2576,3 +2576,48 @@ Status: COMPLETE (Backend REST API + MongoDB integration + React frontend integr
    npm run build
    npm run dev
    ```
+
+
+---
+
+## Full-Stack MERN Completion (Phases 11F-2 through 26)
+
+Status: COMPLETE (Backend REST API + MongoDB integration + React frontend integration + tests).
+
+### Added Backend Capabilities (`server/`)
+
+- **Models (`server/models/`):**
+  - Preserved locked models (`User`, `Category`, `Post`, `Comment`, `Song`, `Biography`).
+  - Added `BookEntry`, `KnowledgeArticle`, `GalleryItem`, `Scheme`, `JourneyEntry`, `Favourite`, and `ContactMessage`.
+- **Authentication & Security (`server/src/middleware/authMiddleware.js`, `authController.js`):**
+  - Password hashing with `bcryptjs`, JWT authentication (`POST /api/auth/register`, `POST /api/auth/login`, `GET /api/auth/me`, `PUT /api/auth/me`), role-based access (`user`, `author`, `admin`), and centralized safe error handling.
+- **REST APIs (`server/src/routes/`):**
+  - `/api/categories`, `/api/posts` (including slug, author, search, and like toggle), `/api/comments` (with replies and admin moderation), `/api/biographies`, `/api/books`, `/api/knowledge`, `/api/schemes`, `/api/songs` (enforcing copyright-safe direct audio vs external links), `/api/gallery`, `/api/journey`, `/api/favourites`, `/api/contact`, `/api/search` (published-only global search), and `/api/admin`.
+- **Category Seed (`server/src/utils/seed.js`):**
+  - Run `npm run seed` in `server/` to initialize default structural categories. Optional `ADMIN_SEED_EMAIL` and `ADMIN_SEED_PASSWORD` environment variables create an initial admin user locally without hardcoding credentials.
+
+### Added Frontend Capabilities (`client/`)
+
+- **Axios API Client & Auth Context:** `client/src/services/api.js`, `client/src/context/AuthContext.jsx`, `client/src/hooks/useFavourite.js`.
+- **Connected Pages:** Live Login & Register (`AuthPage.jsx`), Blog & BlogDetail (search, filters, likes, comments & replies, favourites), Dynamic Archive Details (`HeroDetail`, `BookDetail`, `ConstitutionDetail`, `RightDetail`), Knowledge Hubs (`TribalHistory`, `Constitution`, `Rights`, `ITDA`, `Schemes`), Music Library with HTML5 audio player for owned/licensed tracks & lawful external links, Gallery with collection filter & detail lightbox, My Journey with interest filters (`horses`, `football`, `archery`), Global Search (`/search`), live Contact form (`/contact`), and full Admin & User Account Dashboard (`/admin`).
+
+### Running Locally
+
+1. Ensure local MongoDB Community Server is running (`mongodb://127.0.0.1:27017/adivasi_chronicles`).
+2. Configure `server/.env` (from `server/.env.example`) and optionally `client/.env` (from `client/.env.example`).
+3. Start backend:
+   ```sh
+   cd server
+   npm install
+   npm run seed
+   npm test
+   npm run dev
+   ```
+4. Start frontend:
+   ```sh
+   cd client
+   npm install
+   npm run lint
+   npm run build
+   npm run dev
+   ```
